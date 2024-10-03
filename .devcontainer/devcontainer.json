@@ -1,14 +1,17 @@
 {
-    "name": "Internal Scanner",
-    "dockerFile": "Dockerfile",  // Refers to your Dockerfile, adjust if needed
-    "settings": {
-        "terminal.integrated.shell.linux": "/bin/bash"
-    },
-    "extensions": [
+  "name": "Python 3",
+  "image": "mcr.microsoft.com/devcontainers/python:3",
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.9"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
         "ms-python.python",
         "ms-python.vscode-pylance"
-    ],
-    "postCreateCommand": "pip install --upgrade pip && pip install -r requirements.txt",
-    "forwardPorts": [8000],  // Adjust port if your app runs on a different one
-    "remoteUser": "vscode"
+      ]
+    }
+  }
 }
